@@ -1,0 +1,10 @@
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\RegistroDeEstudiantes.exe.config
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\RegistroDeEstudiantes.exe
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\RegistroDeEstudiantes.pdb
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.csproj.AssemblyReference.cache
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.Properties.Resources.resources
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.csproj.GenerateResource.cache
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.csproj.CoreCompileInputs.cache
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.exe
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.pdb
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.Form1.resources
