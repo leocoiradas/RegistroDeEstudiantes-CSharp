@@ -8,3 +8,6 @@ C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudian
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.exe
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.pdb
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.Form1.resources
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\Logica.dll
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\Logica.pdb
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.csproj.CopyComplete

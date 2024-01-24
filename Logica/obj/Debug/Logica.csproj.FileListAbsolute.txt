@@ -1,0 +1,6 @@
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\bin\Debug\Logica.dll
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\bin\Debug\Logica.pdb
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\Logica.dll
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\Logica.pdb
