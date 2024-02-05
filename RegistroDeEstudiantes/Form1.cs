@@ -1,4 +1,5 @@
 ﻿using Logica;
+using Logica.Library;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace RegistroDeEstudiantes
     public partial class Form1 : Form
     {
         private EstudiantesLogica estudiantes;
+        private Libraries Libraries;
         public Form1()
         {
             InitializeComponent();
+            Libraries = new Libraries();
             //La sig lista se crea para obtener la información de los campos de texto
             var listTextBox = new List <TextBox> ();
             listTextBox.Add(TextBoxID);
@@ -37,7 +40,7 @@ namespace RegistroDeEstudiantes
 
         private void PictureBoxProfile_Click(object sender, EventArgs e)
         {
-            estudiantes.uploadImage.LoadImage(PictureBoxProfile);
+            Libraries.uploadImage.LoadImage(PictureBoxProfile);
         }
 
         private void TextBoxID_TextChanged(object sender, EventArgs e)
@@ -55,7 +58,7 @@ namespace RegistroDeEstudiantes
 
         private void TextBoxID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.numberKeyPress(e);
+            Libraries.textBoxEvent.numberKeyPress(e);
         }
 
         private void TextBoxLastName_TextChanged(object sender, EventArgs e)
@@ -72,7 +75,7 @@ namespace RegistroDeEstudiantes
         }
         private void TextBoxLastName_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.textKeyPress(e);
+            Libraries.textBoxEvent.textKeyPress(e);
         }
 
         private void TextBoxName_TextChanged_1(object sender, EventArgs e)
@@ -90,7 +93,7 @@ namespace RegistroDeEstudiantes
 
         private void TextBoxName_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.textKeyPress(e);
+            Libraries.textBoxEvent.textKeyPress(e);
 
         }
 
@@ -109,7 +112,7 @@ namespace RegistroDeEstudiantes
 
         private void TextBoxDegree_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.textKeyPress(e);
+            Libraries.textBoxEvent.textKeyPress(e);
         }
 
         private void TextBoxEmail_TextChanged(object sender, EventArgs e)
@@ -128,7 +131,7 @@ namespace RegistroDeEstudiantes
 
         private void TextBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
-            estudiantes.textBoxEvent.textKeyPress(e);
+            Libraries.textBoxEvent.textKeyPress(e);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
