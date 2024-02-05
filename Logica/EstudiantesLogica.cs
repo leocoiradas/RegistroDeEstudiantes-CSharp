@@ -1,4 +1,6 @@
-﻿using Logica.Library;
+﻿using Data;
+using LinqToDB;
+using Logica.Library;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,13 +14,13 @@ using Label = System.Windows.Forms.Label;
 
 namespace Logica
 {
-    public class EstudiantesLogica : Libraries
+    public class EstudiantesLogica: Libraries
     {
         private List<TextBox> listTextBox;
         private List<Label> listLabel;
         //Creamos el atributo image, que contendrá la imagen que obtenemos del formulario
         private PictureBox image;
-
+        private Libraries Libraries;
         public EstudiantesLogica(List<TextBox> listTextBox, List<Label> listLabel, object[] images)
         {
             this.listTextBox = listTextBox;
@@ -27,6 +29,7 @@ namespace Logica
             //inicializamos el atributo image, poniendo entre parentesis la clase PictureBox, esto porque vamos a convertir un objeto (o dato) a un 
             //Objeto de la clase PictureBox
             image = (PictureBox)images[0];
+            Libraries = new Libraries();
         }
         public void Registrar()
         {
@@ -53,9 +56,11 @@ namespace Logica
         }
         public void RegistrarEmail()
         {
-            if (textBoxEvent.CheckEmailIsValid(listTextBox[4].Text))
+            if (Libraries.textBoxEvent.CheckEmailIsValid(listTextBox[4].Text))
             {
-                var imageArray = uploadImage.ImageToByte(image.Image);
+                
+                ConectarABaseDeDatos();
+                
             }
             else
             {
@@ -64,6 +69,32 @@ namespace Logica
                 listLabel[4].ForeColor = Color.Red;
                 listTextBox[4].Focus();
             }
+        }
+        public void ConectarABaseDeDatos()
+        {
+            BeginTransactionAsync();
+            try 
+            {
+                var imageArray = Libraries.uploadImage.ImageToByte(image.Image);
+                var db = new Conexion();
+                db.Insert(new Estudiante()
+                {
+                    nid = listTextBox[0].Text,
+                    nombre = listTextBox[1].Text,
+                    apellido = listTextBox[2].Text,
+                    carrera = listTextBox[3].Text,
+                    email = listTextBox[4].Text,
+                    imagen = imageArray,
+                });
+                CommitTransaction();
+            }
+            catch (Exception)
+            {
+                RollbackTransaction();
+            }
+            
+        
+        
         }
     }
 }
