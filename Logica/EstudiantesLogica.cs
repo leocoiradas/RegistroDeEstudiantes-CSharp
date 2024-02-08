@@ -4,6 +4,7 @@ using Logica.Library;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -14,13 +15,15 @@ using Label = System.Windows.Forms.Label;
 
 namespace Logica
 {
-    public class EstudiantesLogica: Libraries
+    public class EstudiantesLogica : Libraries
     {
         private List<TextBox> listTextBox;
         private List<Label> listLabel;
         //Creamos el atributo image, que contendrá la imagen que obtenemos del formulario
         private PictureBox image;
         private Libraries Libraries;
+        private Bitmap BitmapImage;
+        private DataGridView dataGridView;
         public EstudiantesLogica(List<TextBox> listTextBox, List<Label> listLabel, object[] images)
         {
             this.listTextBox = listTextBox;
@@ -30,10 +33,13 @@ namespace Logica
             //Objeto de la clase PictureBox
             image = (PictureBox)images[0];
             Libraries = new Libraries();
+            BitmapImage = (Bitmap)images[1];
+            dataGridView = (DataGridView)images[2];
+            ResetFields();
         }
         public void Registrar()
         {
-            for (int i=0; i< listTextBox.Count; i++)
+            for (int i = 0; i < listTextBox.Count; i++)
             {
                 {
                     if (listTextBox[i].Text.Equals(""))
@@ -43,7 +49,7 @@ namespace Logica
                         listLabel[i].ForeColor = Color.Red;
                         listTextBox[i].Focus();
                         break;
-                        
+
                     }
                     if (listLabel[i].Text.Equals("Email"))
                     {
@@ -52,15 +58,15 @@ namespace Logica
                 }
 
             }
-            
+
         }
         public void RegistrarEmail()
         {
             if (Libraries.textBoxEvent.CheckEmailIsValid(listTextBox[4].Text))
             {
-                
-                ConectarABaseDeDatos();
-                
+
+                CheckEmailIsRegistered();
+
             }
             else
             {
@@ -73,7 +79,7 @@ namespace Logica
         public void ConectarABaseDeDatos()
         {
             BeginTransactionAsync();
-            try 
+            try
             {
                 var imageArray = Libraries.uploadImage.ImageToByte(image.Image);
                 var db = new Conexion();
@@ -87,14 +93,85 @@ namespace Logica
                     imagen = imageArray,
                 });
                 CommitTransaction();
+                ResetFields();
             }
             catch (Exception)
             {
                 RollbackTransaction();
             }
-            
-        
-        
+
+
+
+        }
+        public void CheckEmailIsRegistered()
+        {
+            var user = Estudiantes.Where(u => u.email.Equals(listTextBox[4].Text)).ToList();
+            if (user.Count.Equals(0))
+            {
+                ConectarABaseDeDatos();
+            }
+            else
+            {
+                listLabel[3].Text = "Email ya esta registrado";
+                listLabel[3].ForeColor = Color.Red;
+                listTextBox[3].Focus();
+            }
+        }
+        public void ResetFields()
+        {
+            image.Image = BitmapImage;
+            listLabel[0].Text = "Nid";
+            listLabel[1].Text = "Nombre";
+            listLabel[2].Text = "Apellido";
+            listLabel[3].Text = "Carrera";
+            listLabel[4].Text = "Email";
+            listLabel[0].ForeColor = Color.LightSlateGray;
+            listLabel[1].ForeColor = Color.LightSlateGray;
+            listLabel[2].ForeColor = Color.LightSlateGray;
+            listLabel[3].ForeColor = Color.LightSlateGray;
+            listLabel[4].ForeColor = Color.LightSlateGray;
+            listTextBox[0].Text = "";
+            listTextBox[1].Text = "";
+            listTextBox[2].Text = "";
+            listTextBox[3].Text = "";
+            listTextBox[4].Text = "";
+            SearchStudent("");
+        }
+        private int reg_for_page = 2, page_num = 1;
+        public void SearchStudent(string searchParams) {
+            int inicio = (page_num - 1 ) * reg_for_page;
+            List<Estudiante> query = new List<Estudiante>();
+            if (searchParams.Equals(""))
+            {
+              query = Estudiantes.ToList();
+            }
+            else
+            {
+                query = Estudiantes.Where(c =>
+                    c.nid.StartsWith(searchParams) ||
+                    c.nombre.StartsWith(searchParams) ||
+                    c.apellido.StartsWith(searchParams)).ToList();
+            }
+            if (0< query.Count)
+            {
+                dataGridView.DataSource = query.Select(c => new
+                {
+                    c.id,
+                    c.nid,
+                    c.nombre,
+                    c.apellido,
+                    c.carrera,
+                    c.email
+                }).Skip(inicio).Take(reg_for_page).ToList();
+            }
         }
     }
+        
+            
+            
+        
+
 }
+    
+
+
