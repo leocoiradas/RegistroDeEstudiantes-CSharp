@@ -49,3 +49,4 @@ C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudian
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.exe
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\obj\Debug\RegistroDeEstudiantes.pdb
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\RegistroDeEstudiantes\bin\Debug\Resources\user_default.png

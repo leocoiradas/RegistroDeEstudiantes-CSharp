@@ -43,3 +43,6 @@ C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\L
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\Logica.dll
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\obj\Debug\Logica.pdb
 C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\bin\Debug\System.Drawing.Common.dll
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\bin\Debug\System.Drawing.Common.pdb
+C:\Users\alan_\Desktop\Programacion\NET\RegistroDeEstudiantes\Logica\bin\Debug\System.Drawing.Common.xml
