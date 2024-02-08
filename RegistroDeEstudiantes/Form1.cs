@@ -33,7 +33,12 @@ namespace RegistroDeEstudiantes
             listLabel.Add(labelLastName);
             listLabel.Add(labelDegree);
             listLabel.Add(labelEmail);
-            Object[] images = { PictureBoxProfile };
+            Object[] images = { 
+                PictureBoxProfile,
+                //Nota: PAra añadir imagenes como recurso hay que arrastrar el archivo a resources.resx para poder usarlo
+                Properties.Resources.user_default,
+                dataGridView1
+            };
             estudiantes = new EstudiantesLogica(listTextBox, listLabel, images);
         }
 
