@@ -37,7 +37,8 @@ namespace RegistroDeEstudiantes
                 PictureBoxProfile,
                 //Nota: PAra añadir imagenes como recurso hay que arrastrar el archivo a resources.resx para poder usarlo
                 Properties.Resources.user_default,
-                dataGridView1
+                dataGridView1,
+                numPage
             };
             estudiantes = new EstudiantesLogica(listTextBox, listLabel, images);
         }
@@ -144,7 +145,10 @@ namespace RegistroDeEstudiantes
             estudiantes.Registrar();
         }
 
-        
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            estudiantes.SearchStudent(textBoxSearch.Text);
+        }
     }
 }
 
