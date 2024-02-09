@@ -24,6 +24,7 @@ namespace Logica
         private Libraries Libraries;
         private Bitmap BitmapImage;
         private DataGridView dataGridView;
+        private NumericUpDown inputPage;
         public EstudiantesLogica(List<TextBox> listTextBox, List<Label> listLabel, object[] images)
         {
             this.listTextBox = listTextBox;
@@ -35,6 +36,7 @@ namespace Logica
             Libraries = new Libraries();
             BitmapImage = (Bitmap)images[1];
             dataGridView = (DataGridView)images[2];
+            inputPage = (NumericUpDown)images[3];
             ResetFields();
         }
         public void Registrar()
@@ -152,7 +154,7 @@ namespace Logica
                     c.nombre.StartsWith(searchParams) ||
                     c.apellido.StartsWith(searchParams)).ToList();
             }
-            if (0< query.Count)
+            if (query.Count > 0)
             {
                 dataGridView.DataSource = query.Select(c => new
                 {
@@ -163,6 +165,19 @@ namespace Logica
                     c.carrera,
                     c.email
                 }).Skip(inicio).Take(reg_for_page).ToList();
+                dataGridView.Columns[0].Visible = false;
+            }
+            else
+            {
+                dataGridView.DataSource = query.Select(c => new
+                {
+                    c.id,
+                    c.nid,
+                    c.nombre,
+                    c.apellido,
+                    c.carrera,
+                    c.email
+                }).ToList();
             }
         }
     }
