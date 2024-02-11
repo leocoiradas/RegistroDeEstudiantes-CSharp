@@ -27,7 +27,7 @@ namespace Logica.Library
             pageCount = (maxReg/_reg_for_page);
             //A continuación verificamos si el resto de la operación da mayor a 1
             //En ese caso, creamos una nueva página con los elementos restantes
-            if((maxReg / _reg_for_page) > 0)
+            if((maxReg % _reg_for_page) > 0)
             {
                 pageCount += 1;
 
