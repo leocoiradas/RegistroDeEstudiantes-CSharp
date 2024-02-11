@@ -25,6 +25,7 @@ namespace Logica
         private Bitmap BitmapImage;
         private DataGridView dataGridView;
         private NumericUpDown inputPage;
+        private Paginador<Estudiante> _paginador;
         public EstudiantesLogica(List<TextBox> listTextBox, List<Label> listLabel, object[] images)
         {
             this.listTextBox = listTextBox;
@@ -119,6 +120,26 @@ namespace Logica
                 listTextBox[3].Focus();
             }
         }
+        private List<Estudiante> studentList;
+        public void Paginador(string metodo)
+        {
+            switch (metodo)
+            {
+                case "First":
+                    page_num = _paginador.First();
+                    break;
+                case "Previous":
+                    page_num = _paginador.Previous();
+                    break;
+                case "Next": 
+                    page_num = _paginador.Next();
+                    break;
+                case "Last": 
+                    page_num = _paginador.Last();
+                    break;
+            }
+            SearchStudent("");
+        }
         public void ResetFields()
         {
             image.Image = BitmapImage;
@@ -137,6 +158,11 @@ namespace Logica
             listTextBox[2].Text = "";
             listTextBox[3].Text = "";
             listTextBox[4].Text = "";
+            studentList = Estudiantes.ToList();
+            if (studentList.Count > 0)
+            {
+                _paginador = new Paginador<Estudiante>(studentList, listLabel[5], reg_for_page);
+            }
             SearchStudent("");
         }
         private int reg_for_page = 2, page_num = 1;
