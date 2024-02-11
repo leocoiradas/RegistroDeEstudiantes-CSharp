@@ -17,6 +17,7 @@ namespace Logica.Library
             _dataList = dataList;
             _label = label;
             _reg_for_page = reg_for_page;
+            LoadData();
 
         }
         private void LoadData()
