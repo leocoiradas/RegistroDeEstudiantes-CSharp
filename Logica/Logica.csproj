@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="EstudiantesLogica.cs" />
     <Compile Include="Library\Libraries.cs" />
+    <Compile Include="Library\Paginador.cs" />
     <Compile Include="Library\TextBoxEvent.cs" />
     <Compile Include="Library\UploadImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
