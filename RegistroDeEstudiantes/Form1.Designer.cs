@@ -53,25 +53,25 @@ namespace RegistroDeEstudiantes
             this.PictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numPage = new System.Windows.Forms.NumericUpDown();
+            this.labelPages = new System.Windows.Forms.Label();
+            this.buttonLast = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPrev = new System.Windows.Forms.Button();
+            this.buttonFirst = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonFirst = new System.Windows.Forms.Button();
-            this.buttonPrev = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonLast = new System.Windows.Forms.Button();
-            this.labelPages = new System.Windows.Forms.Label();
-            this.numPage = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxProfile)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numPage)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -349,6 +349,96 @@ namespace RegistroDeEstudiantes
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
+            // numPage
+            // 
+            this.numPage.Location = new System.Drawing.Point(7, 539);
+            this.numPage.Name = "numPage";
+            this.numPage.Size = new System.Drawing.Size(82, 22);
+            this.numPage.TabIndex = 13;
+            // 
+            // labelPages
+            // 
+            this.labelPages.AutoSize = true;
+            this.labelPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPages.Location = new System.Drawing.Point(256, 493);
+            this.labelPages.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPages.Name = "labelPages";
+            this.labelPages.Size = new System.Drawing.Size(90, 25);
+            this.labelPages.TabIndex = 12;
+            this.labelPages.Text = "Páginas";
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.BackColor = System.Drawing.Color.Aqua;
+            this.buttonLast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLast.FlatAppearance.BorderSize = 0;
+            this.buttonLast.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonLast.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLast.ForeColor = System.Drawing.Color.Black;
+            this.buttonLast.Location = new System.Drawing.Point(379, 533);
+            this.buttonLast.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(76, 28);
+            this.buttonLast.TabIndex = 11;
+            this.buttonLast.Text = "Último";
+            this.buttonLast.UseVisualStyleBackColor = false;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.BackColor = System.Drawing.Color.Aqua;
+            this.buttonNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNext.FlatAppearance.BorderSize = 0;
+            this.buttonNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNext.ForeColor = System.Drawing.Color.Black;
+            this.buttonNext.Location = new System.Drawing.Point(295, 533);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(76, 28);
+            this.buttonNext.TabIndex = 10;
+            this.buttonNext.Text = "Siguiente";
+            this.buttonNext.UseVisualStyleBackColor = false;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonPrev
+            // 
+            this.buttonPrev.BackColor = System.Drawing.Color.Aqua;
+            this.buttonPrev.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrev.FlatAppearance.BorderSize = 0;
+            this.buttonPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonPrev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrev.ForeColor = System.Drawing.Color.Black;
+            this.buttonPrev.Location = new System.Drawing.Point(204, 532);
+            this.buttonPrev.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonPrev.Name = "buttonPrev";
+            this.buttonPrev.Size = new System.Drawing.Size(83, 28);
+            this.buttonPrev.TabIndex = 9;
+            this.buttonPrev.Text = "Anterior";
+            this.buttonPrev.UseVisualStyleBackColor = false;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.BackColor = System.Drawing.Color.Aqua;
+            this.buttonFirst.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFirst.FlatAppearance.BorderSize = 0;
+            this.buttonFirst.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonFirst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFirst.ForeColor = System.Drawing.Color.Black;
+            this.buttonFirst.Location = new System.Drawing.Point(121, 532);
+            this.buttonFirst.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(75, 28);
+            this.buttonFirst.TabIndex = 8;
+            this.buttonFirst.Text = "Primero";
+            this.buttonFirst.UseVisualStyleBackColor = false;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -412,92 +502,6 @@ namespace RegistroDeEstudiantes
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar";
             // 
-            // buttonFirst
-            // 
-            this.buttonFirst.BackColor = System.Drawing.Color.Aqua;
-            this.buttonFirst.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFirst.FlatAppearance.BorderSize = 0;
-            this.buttonFirst.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonFirst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.buttonFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFirst.ForeColor = System.Drawing.Color.Black;
-            this.buttonFirst.Location = new System.Drawing.Point(121, 532);
-            this.buttonFirst.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(75, 28);
-            this.buttonFirst.TabIndex = 8;
-            this.buttonFirst.Text = "Primero";
-            this.buttonFirst.UseVisualStyleBackColor = false;
-            // 
-            // buttonPrev
-            // 
-            this.buttonPrev.BackColor = System.Drawing.Color.Aqua;
-            this.buttonPrev.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPrev.FlatAppearance.BorderSize = 0;
-            this.buttonPrev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonPrev.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.buttonPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPrev.ForeColor = System.Drawing.Color.Black;
-            this.buttonPrev.Location = new System.Drawing.Point(204, 532);
-            this.buttonPrev.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonPrev.Name = "buttonPrev";
-            this.buttonPrev.Size = new System.Drawing.Size(83, 28);
-            this.buttonPrev.TabIndex = 9;
-            this.buttonPrev.Text = "Anterior";
-            this.buttonPrev.UseVisualStyleBackColor = false;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.BackColor = System.Drawing.Color.Aqua;
-            this.buttonNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNext.FlatAppearance.BorderSize = 0;
-            this.buttonNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNext.ForeColor = System.Drawing.Color.Black;
-            this.buttonNext.Location = new System.Drawing.Point(295, 533);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(76, 28);
-            this.buttonNext.TabIndex = 10;
-            this.buttonNext.Text = "Siguiente";
-            this.buttonNext.UseVisualStyleBackColor = false;
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.BackColor = System.Drawing.Color.Aqua;
-            this.buttonLast.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLast.FlatAppearance.BorderSize = 0;
-            this.buttonLast.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonLast.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.buttonLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLast.ForeColor = System.Drawing.Color.Black;
-            this.buttonLast.Location = new System.Drawing.Point(379, 533);
-            this.buttonLast.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(76, 28);
-            this.buttonLast.TabIndex = 11;
-            this.buttonLast.Text = "Último";
-            this.buttonLast.UseVisualStyleBackColor = false;
-            // 
-            // labelPages
-            // 
-            this.labelPages.AutoSize = true;
-            this.labelPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPages.Location = new System.Drawing.Point(256, 493);
-            this.labelPages.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPages.Name = "labelPages";
-            this.labelPages.Size = new System.Drawing.Size(90, 25);
-            this.labelPages.TabIndex = 12;
-            this.labelPages.Text = "Páginas";
-            // 
-            // numPage
-            // 
-            this.numPage.Location = new System.Drawing.Point(7, 539);
-            this.numPage.Name = "numPage";
-            this.numPage.Size = new System.Drawing.Size(82, 22);
-            this.numPage.TabIndex = 13;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -519,10 +523,10 @@ namespace RegistroDeEstudiantes
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxProfile)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numPage)).EndInit();
             this.ResumeLayout(false);
 
         }
