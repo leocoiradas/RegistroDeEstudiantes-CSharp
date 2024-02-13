@@ -26,6 +26,7 @@ namespace Logica
         private DataGridView dataGridView;
         private NumericUpDown inputPage;
         private Paginador<Estudiante> _paginador;
+        private string _action = "insert";
         public EstudiantesLogica(List<TextBox> listTextBox, List<Label> listLabel, object[] images)
         {
             this.listTextBox = listTextBox;
@@ -115,9 +116,17 @@ namespace Logica
             }
             else
             {
-                listLabel[3].Text = "Email ya esta registrado";
-                listLabel[3].ForeColor = Color.Red;
-                listTextBox[3].Focus();
+                if (user[0].id.Equals(_idStudent))
+                {
+                    ConectarABaseDeDatos();
+                }
+                else
+                {
+                    listLabel[3].Text = "Email ya esta registrado";
+                    listLabel[3].ForeColor = Color.Red;
+                    listTextBox[3].Focus();
+                }
+                
             }
         }
         private List<Estudiante> studentList;
@@ -189,9 +198,11 @@ namespace Logica
                     c.nombre,
                     c.apellido,
                     c.carrera,
-                    c.email
+                    c.email,
+                    c.imagen
                 }).Skip(inicio).Take(reg_for_page).ToList();
                 dataGridView.Columns[0].Visible = false;
+                dataGridView.Columns[6].Visible = false;
             }
             else
             {
@@ -204,6 +215,28 @@ namespace Logica
                     c.carrera,
                     c.email
                 }).ToList();
+            }
+        }
+
+        private int _idStudent = 0;
+        public void GetEstudiante()
+        {
+            _action = "update";
+            _idStudent = Convert.ToInt16(dataGridView.CurrentRow.Cells[0].Value);
+            listTextBox[0].Text = Convert.ToString(dataGridView.CurrentRow.Cells[1].Value);
+            listTextBox[1].Text = Convert.ToString(dataGridView.CurrentRow.Cells[2].Value);
+            listTextBox[2].Text = Convert.ToString(dataGridView.CurrentRow.Cells[3].Value);
+            listTextBox[3].Text = Convert.ToString(dataGridView.CurrentRow.Cells[4].Value);
+            listTextBox[4].Text = Convert.ToString(dataGridView.CurrentRow.Cells[5].Value);
+            listTextBox[5].Text = Convert.ToString(dataGridView.CurrentRow.Cells[6].Value);
+            try
+            {
+                byte[] arrayImage = (byte[])dataGridView.CurrentRow.Cells[6].Value;
+                image.Image = uploadImage.byteArrayToImage(arrayImage);
+            }
+            catch (Exception)
+            {
+                image.Image = BitmapImage;
             }
         }
     }
