@@ -33,6 +33,7 @@ namespace RegistroDeEstudiantes
             listLabel.Add(labelLastName);
             listLabel.Add(labelDegree);
             listLabel.Add(labelEmail);
+            listLabel.Add(labelPages);
             Object[] images = { 
                 PictureBoxProfile,
                 //Nota: PAra añadir imagenes como recurso hay que arrastrar el archivo a resources.resx para poder usarlo
@@ -148,6 +149,26 @@ namespace RegistroDeEstudiantes
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             estudiantes.SearchStudent(textBoxSearch.Text);
+        }
+
+        private void buttonFirst_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("First");
+        }
+
+        private void buttonPrev_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Previous");
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Next");
+        }
+
+        private void buttonLast_Click(object sender, EventArgs e)
+        {
+            estudiantes.Paginador("Last");
         }
     }
 }
