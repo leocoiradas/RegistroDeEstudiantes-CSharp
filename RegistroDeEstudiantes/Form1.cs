@@ -170,6 +170,22 @@ namespace RegistroDeEstudiantes
         {
             estudiantes.Paginador("Last");
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows.Count != 0)
+            {
+                estudiantes.GetEstudiante();
+            }
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridView1.Rows.Count != 0)
+            {
+                estudiantes.GetEstudiante();
+            }
+        }
     }
 }
 
