@@ -87,15 +87,32 @@ namespace Logica
             {
                 var imageArray = Libraries.uploadImage.ImageToByte(image.Image);
                 var db = new Conexion();
-                db.Insert(new Estudiante()
-                {
-                    nid = listTextBox[0].Text,
-                    nombre = listTextBox[1].Text,
-                    apellido = listTextBox[2].Text,
-                    carrera = listTextBox[3].Text,
-                    email = listTextBox[4].Text,
-                    imagen = imageArray,
-                });
+                switch (_action)
+                {   
+                    case "insert":
+                        
+                        db.Insert(new Estudiante()
+                        {
+                            nid = listTextBox[0].Text,
+                            nombre = listTextBox[1].Text,
+                            apellido = listTextBox[2].Text,
+                            carrera = listTextBox[3].Text,
+                            email = listTextBox[4].Text,
+                            imagen = imageArray,
+                        });
+                        break;
+                    case "update":
+
+                        db.Update(Estudiantes.Where(u => u.id.Equals(_idStudent))
+                            .Set(p => p.nid, listTextBox[0].Text)
+                            .Set(p => p.nombre, listTextBox[1].Text)
+                            .Set(p => p.apellido, listTextBox[2].Text)
+                            .Set(p => p.carrera, listTextBox[3].Text)
+                            .Set(p => p.email, listTextBox[4].Text)
+                            .Set(p => p.imagen, imageArray));
+                        break;
+                }
+                
                 CommitTransaction();
                 ResetFields();
             }
@@ -151,6 +168,9 @@ namespace Logica
         }
         public void ResetFields()
         {
+            _action = "insert";
+            page_num = 1;
+            _idStudent = 0;
             image.Image = BitmapImage;
             listLabel[0].Text = "Nid";
             listLabel[1].Text = "Nombre";
@@ -237,6 +257,22 @@ namespace Logica
             catch (Exception)
             {
                 image.Image = BitmapImage;
+            }
+        }
+        public void DeleteStudent()
+        {
+            if (_idStudent.Equals(0))
+            {
+                MessageBox.Show("Seleccione un estudiante");
+            }
+            else
+            {
+                if (MessageBox.Show("Estás seguro de que quieres eliminar el siguiente estudiante?", "Eliminar estudiante",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Estudiantes.Where(c => c.nid.Equals(_idStudent)).Delete();
+                    ResetFields();
+                }
             }
         }
     }
